@@ -25,6 +25,8 @@ def main():
     with open(path, "w", encoding="utf-8", newline="") as f:
         f.write(WORD)
     os.chmod(path, 0o644)
+    with open(path, "r", encoding="utf-8", newline="") as f:
+        assert f.read() == WORD, "written entry does not match WORD"
 
 
 if __name__ == "__main__":
